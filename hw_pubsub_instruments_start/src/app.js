@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
   const selectElement= document.querySelector('select#instrument-families');
   console.log(selectElement);
   const instrumentDropdown = new SelectView(selectElement);
-  console.log(instrumentDropdown);
   instrumentDropdown.bindEvents();
 
   const instrumentFamilies = new InstrumentFamilies;

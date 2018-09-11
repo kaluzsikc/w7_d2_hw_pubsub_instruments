@@ -7,8 +7,13 @@ const SelectView = function(element){
 SelectView.prototype.bindEvents = function () {
   PubSub.subscribe('InstrumentFamilies:all-instruments-ready', (event) => {
     const allInstruments = event.detail;
-    console.log(allInstruments);
+    // console.log(allInstruments);
     this.populate(allInstruments);
+  });
+  this.element.addEventListener('change', (event) => {
+    const selectedIndex = event.target.value;
+    // console.log(selectedIndex);
+    PubSub.publish('SelectView:change', selectedIndex);
   });
 
 };
